@@ -1,0 +1,260 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Calc_GUI extends JFrame {
+	
+	double num1,num2;
+	String	signo;
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	/**
+	 * @wbp.nonvisual location=-13,7
+	 */
+	private final JPanel panel = new JPanel();
+	private JTextField cajaResultado;
+	private JButton dividir;
+	private JButton multiplicar;
+	private JButton borrarParcial;
+	private JButton siete;
+	private JButton ocho;
+	private JButton nueve;
+	private JButton cuatro;
+	private JButton cinco;
+	private JButton seis;
+	private JButton uno;
+	private JButton dos;
+	private JButton tres;
+	private JButton btnNewButton_14;
+	private JButton btnNewButton_16;
+	private JButton btnNewButton_17;
+	private JButton btnNewButton_18;
+	private JButton btnNewButton_19;
+	private JButton btnNewButton_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calc_GUI frame = new Calc_GUI();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Calc_GUI() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 281, 378);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		cajaResultado = new JTextField();
+		cajaResultado.setBounds(10, 11, 245, 55);
+		contentPane.add(cajaResultado);
+		cajaResultado.setColumns(10);
+		
+		JButton borrarCompleto = new JButton("C");
+		borrarCompleto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText("");
+			}	
+		});
+		borrarCompleto.setBounds(10, 89, 44, 39);
+		contentPane.add(borrarCompleto);
+		
+		dividir = new JButton("/");
+		dividir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num1=Double.parseDouble(cajaResultado.getText());
+				signo = "/";
+				cajaResultado.setText("");
+			}
+		});
+		dividir.setBounds(61, 89, 44, 39);
+		contentPane.add(dividir);
+		
+		
+		multiplicar = new JButton("*");
+		multiplicar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num1=Double.parseDouble(cajaResultado.getText());
+				signo = "*";
+				cajaResultado.setText("");
+			}
+		});
+		multiplicar.setBounds(115, 89, 44, 39);
+		contentPane.add(multiplicar);
+		
+		borrarParcial = new JButton("New button");
+		borrarParcial.setBounds(190, 89, 44, 39);
+		contentPane.add(borrarParcial);
+		
+		siete = new JButton("7");
+		siete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"7");
+			}
+		});
+		siete.setBounds(10, 139, 44, 39);
+		contentPane.add(siete);
+		
+		ocho = new JButton("8");
+		ocho.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"8");
+			}
+		});
+		ocho.setBounds(61, 139, 44, 39);
+		contentPane.add(ocho);
+		
+		nueve = new JButton("9");
+		nueve.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"9");
+			}
+		});
+		nueve.setBounds(115, 139, 44, 39);
+		contentPane.add(nueve);
+		
+		cuatro = new JButton("4");
+		cuatro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"4");
+			}
+		});
+		cuatro.setBounds(10, 189, 44, 39);
+		contentPane.add(cuatro);
+		
+		cinco = new JButton("5");
+		cinco.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"5");
+			}
+		});
+		cinco.setBounds(61, 189, 44, 39);
+		contentPane.add(cinco);
+		
+		seis = new JButton("6");
+		seis.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"6");
+			}
+		});
+		seis.setBounds(115, 189, 44, 39);
+		contentPane.add(seis);
+		
+		uno = new JButton("1");
+		uno.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"1");
+			}
+		});
+		uno.setBounds(10, 239, 44, 39);
+		contentPane.add(uno);
+		
+		dos = new JButton("2");
+		dos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"2");
+			}
+		});
+		dos.setBounds(61, 239, 44, 39);
+		contentPane.add(dos);
+		
+		tres = new JButton("3");
+		tres.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"3");
+			}
+		});
+		tres.setBounds(115, 239, 44, 39);
+		contentPane.add(tres);
+		
+		btnNewButton_14 = new JButton("0");
+		btnNewButton_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				cajaResultado.setText(cajaResultado.getText()+"0");
+			}
+		});
+		btnNewButton_14.setBounds(10, 289, 95, 39);
+		contentPane.add(btnNewButton_14);
+		
+		btnNewButton_16 = new JButton("New button");
+		btnNewButton_16.setBounds(190, 139, 44, 39);
+		contentPane.add(btnNewButton_16);
+		
+		btnNewButton_17 = new JButton("-");
+		btnNewButton_17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num1=Double.parseDouble(cajaResultado.getText());
+				signo = "-";
+				cajaResultado.setText("");
+			}
+		});
+		btnNewButton_17.setBounds(190, 189, 44, 39);
+		contentPane.add(btnNewButton_17);
+		
+		btnNewButton_18 = new JButton("+");
+		btnNewButton_18.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num1=Double.parseDouble(cajaResultado.getText());
+				signo = "+";
+				cajaResultado.setText("");
+			}
+		});
+		btnNewButton_18.setBounds(190, 239, 44, 39);
+		contentPane.add(btnNewButton_18);
+		
+		btnNewButton_19 = new JButton("=");
+		btnNewButton_19.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				num2=Integer.parseInt(cajaResultado.getText());
+				switch(signo) {
+				case "+":
+					cajaResultado.setText(Double.toString(num1+num2));
+					break;
+				case "-":
+					cajaResultado.setText(Double.toString(num1-num2));
+					break;
+				case "*":
+					cajaResultado.setText(Double.toString(num1*num2));
+					break;
+				case "/":
+					cajaResultado.setText(Double.toString(num1/num2));
+					break;
+				default:
+					cajaResultado.setText("ERROR");
+					break;
+				}
+			}
+		});
+		btnNewButton_19.setBounds(190, 289, 44, 39);
+		contentPane.add(btnNewButton_19);
+		
+		btnNewButton_1 = new JButton(",");
+		btnNewButton_1.setBounds(115, 289, 44, 39);
+		contentPane.add(btnNewButton_1);
+	}
+}
